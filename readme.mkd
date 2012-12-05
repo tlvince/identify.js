@@ -11,6 +11,9 @@ console.log(identify(html));
 // <h1 id="the-wizard-of-oz">The Wizard of Oz</h1><p id="the-morning-after">The morning after the balloon</p>
 ```
 
+For a more complete example, see [gh-pages/example][], e.g. deep-linking to the
+[first blockquote][blockquote].
+
 ## Install
 
     npm install identify
@@ -24,3 +27,5 @@ Copyright 2012 Tom Vincent <http://tlvince.com/contact>
 Released under the [MIT License][license].
 
   [license]: http://tlvince.mit-license.org/
+  [gh-pages/example]: https://github.com/tlvince/identify.js/blob/gh-pages/example/index.html
+  [blockquote]: https://github.com/tlvince/identify.js/blob/gh-pages/example/index.html
