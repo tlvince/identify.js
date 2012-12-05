@@ -28,4 +28,4 @@ Released under the [MIT License][license].
 
   [license]: http://tlvince.mit-license.org/
   [gh-pages/example]: https://github.com/tlvince/identify.js/blob/gh-pages/example/index.html
-  [blockquote]: https://github.com/tlvince/identify.js/blob/gh-pages/example/index.html
+  [blockquote]: http://tlvince.github.com/identify.js/example/#blockquote0
