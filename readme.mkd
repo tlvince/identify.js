@@ -1,0 +1,27 @@
+# identify.js
+
+Generate `id` attributes for HTML block elements.
+
+## Usage
+
+```
+var identify = require('identify');
+
+var html = "<h1>The Wizard of Oz</h1><p>The morning after the balloon</p>";
+console.log(identify(html);
+// <h1 id="the-wizard-of-oz">The Wizard of Oz</h1><p id="the-morning-after">The morning after the balloon</p>
+```
+
+## Install
+
+    npm install identify
+
+## Author
+
+Copyright 2012 Tom Vincent <http://tlvince.com/contact>
+
+## License
+
+Released under the [MIT License][license].
+
+  [license]: http://tlvince.mit-license.org/

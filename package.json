@@ -1,0 +1,26 @@
+{
+  "name": "identify",
+  "version": "0.1.0",
+  "author": "Tom Vincent <http://tlvince.com/contact>",
+  "description": "Generate id attributes for HTML block elements",
+  "license": "MIT",
+  "main": "./lib/identify",
+  "keywords": [
+    "id",
+    "anchor",
+    "deep-link"
+  ],
+  "directories": {
+    "lib": "./lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlvince/identify.git"
+  },
+  "dependencies": {
+    "cheerio": "~0.10.3"
+  },
+  "engine": {
+    "node": ">=0.6"
+  }
+}
