@@ -7,7 +7,7 @@ Generate `id` attributes for HTML block elements.
 ```javascript
 var identify = require('identify');
 var html = "<h1>The Wizard of Oz</h1><p>The morning after the balloon</p>";
-console.log(identify(html);
+console.log(identify(html));
 // <h1 id="the-wizard-of-oz">The Wizard of Oz</h1><p id="the-morning-after">The morning after the balloon</p>
 ```
 
