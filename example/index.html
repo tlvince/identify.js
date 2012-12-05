@@ -1,0 +1,483 @@
+<p id="pandoc-test">% Pandoc Test Suite % John MacFarlane; Anonymous % July 17, 2006</p>
+<p id="this-is-a">This is a set of tests for pandoc. Most of them are adapted from John Gruber’s markdown test suite.</p>
+<hr id="hr0">
+<h1 id="headers">Headers</h1>
+<h2 id="level-2-with-an-embedded-link">Level 2 with an <a href="/url">embedded link</a></h2>
+<h3 id="level-3-with-emphasis">Level 3 with <em>emphasis</em></h3>
+<h4 id="level-4">Level 4</h4>
+<h5 id="level-5">Level 5</h5>
+<h1 id="level-1">Level 1</h1>
+<h2 id="level-2-with-emphasis">Level 2 with <em>emphasis</em></h2>
+<h3 id="level-3">Level 3</h3>
+<p id="with-no-blank">with no blank line</p>
+<h2 id="level-2">Level 2</h2>
+<p id="with-no-blank">with no blank line</p>
+<hr id="hr1">
+<h1 id="paragraphs">Paragraphs</h1>
+<p id="heres-a-regular">Here’s a regular paragraph.</p>
+<p id="in-markdown-100">In Markdown 1.0.0 and earlier. Version 8. This line turns into a list item. Because a hard-wrapped line in the middle of a paragraph looked like a list item.</p>
+<p id="heres-one-with">Here’s one with a bullet. * criminey.</p>
+<p id="there-should-be">There should be a hard line break\ here.</p>
+<hr id="hr2">
+<h1 id="block-quotes">Block Quotes</h1>
+<p id="e-mail-style">E-mail style:</p>
+<blockquote id="blockquote0">
+<p id="this-is-a">This is a block quote. It is pretty short.</p>
+</blockquote>
+<blockquote id="blockquote1">
+<p id="code-in-a">Code in a block quote:</p>
+<pre id="pre0"><code>sub status {
+    print &quot;working&quot;;
+}</code></pre>
+<p id="a-list">A list:</p>
+<ol id="ol0">
+<li>item one</li>
+<li>item two</li>
+</ol>
+<p id="nested-block-quotes">Nested block quotes:</p>
+<blockquote id="blockquote2">
+<p id="nested">nested</p>
+</blockquote>
+<blockquote id="blockquote3">
+<p id="nested">nested</p>
+</blockquote>
+</blockquote>
+<p id="this-should-not">This should not be a block quote: 2 &gt; 1.</p>
+<p id="and-a-following">And a following paragraph.</p>
+<hr id="hr3">
+<h1 id="code-blocks">Code Blocks</h1>
+<p id="code">Code:</p>
+<pre id="pre1"><code>---- (should be four hyphens)
+
+sub status {
+    print &quot;working&quot;;
+}
+
+this code block is indented by one tab</code></pre>
+<p id="and">And:</p>
+<pre id="pre2"><code>    this code block is indented by two tabs
+
+These should not be escaped:  \$ \\ \&gt; \[ \{</code></pre>
+<hr id="hr4">
+<h1 id="lists">Lists</h1>
+<h2 id="unordered">Unordered</h2>
+<p id="asterisks-tight">Asterisks tight:</p>
+<ul id="ul0">
+<li>asterisk 1</li>
+<li>asterisk 2</li>
+<li>asterisk 3</li>
+</ul>
+<p id="asterisks-loose">Asterisks loose:</p>
+<ul id="ul1">
+<li><p id="asterisk-1">asterisk 1</p></li>
+<li><p id="asterisk-2">asterisk 2</p></li>
+<li><p id="asterisk-3">asterisk 3</p></li>
+</ul>
+<p id="pluses-tight">Pluses tight:</p>
+<ul id="ul2">
+<li>Plus 1</li>
+<li>Plus 2</li>
+<li>Plus 3</li>
+</ul>
+<p id="pluses-loose">Pluses loose:</p>
+<ul id="ul3">
+<li><p id="plus-1">Plus 1</p></li>
+<li><p id="plus-2">Plus 2</p></li>
+<li><p id="plus-3">Plus 3</p></li>
+</ul>
+<p id="minuses-tight">Minuses tight:</p>
+<ul id="ul4">
+<li>Minus 1</li>
+<li>Minus 2</li>
+<li>Minus 3</li>
+</ul>
+<p id="minuses-loose">Minuses loose:</p>
+<ul id="ul5">
+<li><p id="minus-1">Minus 1</p></li>
+<li><p id="minus-2">Minus 2</p></li>
+<li><p id="minus-3">Minus 3</p></li>
+</ul>
+<h2 id="ordered">Ordered</h2>
+<p id="tight">Tight:</p>
+<ol id="ol1">
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ol>
+<p id="and">and:</p>
+<ol id="ol2">
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ol>
+<p id="loose-using-tabs">Loose using tabs:</p>
+<ol id="ol3">
+<li><p id="first">First</p></li>
+<li><p id="second">Second</p></li>
+<li><p id="third">Third</p></li>
+</ol>
+<p id="and-using-spaces">and using spaces:</p>
+<ol id="ol4">
+<li><p id="one">One</p></li>
+<li><p id="two">Two</p></li>
+<li><p id="three">Three</p></li>
+</ol>
+<p id="multiple-paragraphs">Multiple paragraphs:</p>
+<ol id="ol5">
+<li><p id="item-1-graf">Item 1, graf one.</p>
+<p id="item-1-graf">Item 1. graf two. The quick brown fox jumped over the lazy dog’s back.</p></li>
+<li><p id="item-2">Item 2.</p></li>
+<li><p id="item-3">Item 3.</p></li>
+</ol>
+<h2 id="nested">Nested</h2>
+<ul id="ul6">
+<li>Tab
+<ul id="ul7">
+<li>Tab
+<ul id="ul8">
+<li>Tab</li>
+</ul></li>
+</ul></li>
+</ul>
+<p id="heres-another">Here’s another:</p>
+<ol id="ol6">
+<li>First</li>
+<li>Second:
+<ul id="ul9">
+<li>Fee</li>
+<li>Fie</li>
+<li>Foe</li>
+</ul></li>
+<li>Third</li>
+</ol>
+<p id="same-thing-but">Same thing but with paragraphs:</p>
+<ol id="ol7">
+<li><p id="first">First</p></li>
+<li><p id="second">Second:</p>
+<ul id="ul10">
+<li>Fee</li>
+<li>Fie</li>
+<li>Foe</li>
+</ul></li>
+<li><p id="third">Third</p></li>
+</ol>
+<h2 id="tabs-and-spaces">Tabs and spaces</h2>
+<ul id="ul11">
+<li><p id="this-is-a">this is a list item indented with tabs</p></li>
+<li><p id="this-is-a">this is a list item indented with spaces</p>
+<ul id="ul12">
+<li><p id="this-is-an">this is an example list item indented with tabs</p></li>
+<li><p id="this-is-an">this is an example list item indented with spaces</p></li>
+</ul></li>
+</ul>
+<h2 id="fancy-list-markers">Fancy list markers</h2>
+<p id="2-begins-with">(2) begins with 2 (3) and now 3</p>
+<pre id="pre3"><code>with a continuation
+
+iv. sublist with roman numerals, starting with 4
+v.  more items
+    (A) a subsublist
+    (B) a subsublist</code></pre>
+<p id="nesting">Nesting:</p>
+<p id="a-upper-alpha">A. Upper Alpha I. Upper Roman. (6) Decimal start with 6 c) Lower alpha with paren</p>
+<p id="autonumbering">Autonumbering:</p>
+<ol id="ol8">
+<li>Autonumber.</li>
+<li>More.
+<ol id="ol9">
+<li>Nested.</li>
+</ol></li>
+</ol>
+<p id="should-not-be">Should not be a list item:</p>
+<p id="ma-2007">M.A. 2007</p>
+<p id="b-williams">B. Williams</p>
+<hr id="hr5">
+<h1 id="definition-lists">Definition Lists</h1>
+<p id="tight-using-spaces">Tight using spaces:</p>
+<p id="apple-red">apple : red fruit orange : orange fruit banana : yellow fruit</p>
+<p id="tight-using-tabs">Tight using tabs:</p>
+<p id="apple-red">apple : red fruit orange : orange fruit banana : yellow fruit</p>
+<p id="loose">Loose:</p>
+<p id="apple-red">apple : red fruit</p>
+<p id="orange-orange">orange : orange fruit</p>
+<p id="banana-yellow">banana : yellow fruit</p>
+<p id="multiple-blocks-with">Multiple blocks with italics:</p>
+<p id="apple-red"><em>apple</em> : red fruit</p>
+<pre id="pre4"><code>contains seeds, crisp, pleasant to taste</code></pre>
+<p id="orange-orange"><em>orange</em> : orange fruit</p>
+<pre id="pre5"><code>    { orange code block }
+
+&gt; orange block quote</code></pre>
+<p id="multiple-definitions-tight">Multiple definitions, tight:</p>
+<p id="apple-red">apple : red fruit : computer orange : orange fruit : bank</p>
+<p id="multiple-definitions-loose">Multiple definitions, loose:</p>
+<p id="apple-red">apple : red fruit</p>
+<p id="computer">: computer</p>
+<p id="orange-orange">orange : orange fruit</p>
+<p id="bank">: bank</p>
+<p id="blank-line-after">Blank line after term, indented marker, alternate markers:</p>
+<p id="apple-red">apple : red fruit</p>
+<p id="computer">: computer</p>
+<p id="orange-orange">orange : orange fruit</p>
+<pre id="pre6"><code>1.  sublist
+2.  sublist</code></pre>
+<h1 id="html-blocks">HTML Blocks</h1>
+<p id="simple-block-on">Simple block on one line:</p>
+<div id="div0">
+foo
+</div>
+
+
+<p id="and-nested-without">And nested without indentation:</p>
+<div id="div1">
+<div id="div2">
+<div id="div3">
+foo
+</div>
+</div>
+<div id="div4">
+bar
+</div>
+</div>
+
+
+<p id="interpreted-markdown-in">Interpreted markdown in a table:</p>
+<table id="table0">
+<tr>
+<td>
+This is *emphasized*
+</td>
+<td>
+And this is **strong**
+</td>
+</tr>
+</table>
+
+
+<script type="text/javascript">
+<p>document.write(‘This <em>should not</em> be interpreted as markdown’);</script>
+<p id="heres-a-simple">Here’s a simple block:</p>
+<div id="div5">
+
+foo
+</div>
+
+
+<p id="this-should-be">This should be a code block, though:</p>
+<pre id="pre7"><code>&lt;div&gt;
+    foo
+&lt;/div&gt;</code></pre>
+<p id="as-should-this">As should this:</p>
+<pre id="pre8"><code>&lt;div&gt;foo&lt;/div&gt;</code></pre>
+<p id="now-nested">Now, nested:</p>
+<div id="div6">
+    <div id="div7">
+        <div id="div8">
+
+foo
+</div>
+    </div>
+</div>
+
+
+<p id="this-should-just">This should just be an HTML comment:</p>
+<!-- Comment -->
+
+
+<p id="multiline">Multiline:</p>
+<!--
+Blah
+Blah
+-->
+
+
+<!--
+    This is another comment.
+-->
+
+
+<p id="code-block">Code block:</p>
+<pre id="pre9"><code>&lt;!-- Comment --&gt;</code></pre>
+<p id="just-plain-comment">Just plain comment, with trailing spaces on the line:</p>
+<!-- foo -->   
+
+
+<p id="code">Code:</p>
+<pre id="pre10"><code>&lt;hr /&gt;</code></pre>
+<p id="hrs">Hr’s:</p>
+<hr id="hr6">
+
+
+<hr id="hr7">
+
+
+<hr id="hr8">
+
+
+<hr id="hr9">   
+
+
+<hr id="hr10">  
+
+
+<hr id="hr11"> 
+
+
+<hr class="foo" id="bar">
+
+
+<hr class="foo" id="bar">
+
+
+<hr class="foo" id="bar">
+
+
+<hr id="hr15">
+<h1 id="inline-markup">Inline Markup</h1>
+<p id="this-is-emphasized">This is <em>emphasized</em>, and so <em>is this</em>.</p>
+<p id="this-is-strong">This is <strong>strong</strong>, and so <strong>is this</strong>.</p>
+<p id="an-emphasized-link">An <em><a href="/url">emphasized link</a></em>.</p>
+<p id="this-is-strong"><strong><em>This is strong and em.</em></strong></p>
+<p id="so-is-this">So is <strong><em>this</em></strong> word.</p>
+<p id="this-is-strong"><strong><em>This is strong and em.</em></strong></p>
+<p id="so-is-this">So is <strong><em>this</em></strong> word.</p>
+<p id="this-is-code">This is code: <code>&gt;</code>, <code>$</code>, <code>\</code>, <code>\$</code>, <code>&lt;html&gt;</code>.</p>
+<p id="this-is-strikeout">~~This is <em>strikeout</em>.~~</p>
+<p id="superscripts-abcd-ahello">Superscripts: a^bc^d a^<em>hello</em>^ a^hello there^.</p>
+<p id="subscripts-h2o-h23o">Subscripts: H~2~O, H~23~O, H~many of them~O.</p>
+<p id="these-should-not">These should not be superscripts or subscripts, because of the unescaped spaces: a\^b c\^d, a~b c~d.</p>
+<hr id="hr16">
+<h1 id="smart-quotes-ellipses-dashes">Smart quotes, ellipses, dashes</h1>
+<p id="hello-said-the">“Hello,” said the spider. “‘Shelob’ is my name.”</p>
+<p id="a-b-and">‘A’, ‘B’, and ‘C’ are letters.</p>
+<p id="oak-elm-and">‘Oak,’ ‘elm,’ and ‘beech’ are names of trees. So is ‘pine.’</p>
+<p id="he-said-i">‘He said, “I want to go.”’ Were you alive in the 70’s?</p>
+<p id="here-is-some">Here is some quoted ‘<code>code</code>’ and a “<a href="http://example.com/?foo=1&amp;bar=2">quoted link</a>”.</p>
+<p id="some-dashes-onetwo">Some dashes: one—two — three—four — five.</p>
+<p id="dashes-between-numbers">Dashes between numbers: 5–7, 255–66, 1987–1999.</p>
+<p id="ellipsesandand">Ellipses…and…and….</p>
+<hr id="hr17">
+<h1 id="latex">LaTeX</h1>
+<ul id="ul13">
+<li>\cite[22-23]{smith.1899}</li>
+<li>$2+2=4$</li>
+<li>$x \in y$</li>
+<li>$\alpha \wedge \omega$</li>
+<li>$223$</li>
+<li>$p$-Tree</li>
+<li>Here’s some display math: $$\frac{d}{dx}f(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$$</li>
+<li>Here’s one that has a line break in it: $\alpha + \omega \times x^2$.</li>
+</ul>
+<p id="these-shouldnt-be">These shouldn’t be math:</p>
+<ul id="ul14">
+<li>To get the famous equation, write <code>$e = mc^2$</code>.</li>
+<li>\$22,000 is a <em>lot</em> of money. So is \$34,000. (It worked if “lot” is emphasized.)</li>
+<li>Shoes (\$20) and socks (\$5).</li>
+<li>Escaped <code>$</code>: \$73 <em>this should be emphasized</em> 23\$.</li>
+</ul>
+<p id="heres-a-latex">Here’s a LaTeX table:</p>
+<p id="begintabularllhline-animal-and">\begin{tabular}{|l|l|}\hline Animal &amp; Number \ \hline Dog &amp; 2 \ Cat &amp; 1 \ \hline \end{tabular}</p>
+<hr id="hr18">
+<h1 id="special-characters">Special Characters</h1>
+<p id="here-is-some">Here is some unicode:</p>
+<ul id="ul15">
+<li>I hat: Î</li>
+<li>o umlaut: ö</li>
+<li>section: §</li>
+<li>set membership: ∈</li>
+<li>copyright: ©</li>
+</ul>
+<p id="atandt-has-an">AT&amp;T has an ampersand in their name.</p>
+<p id="atandt-is-another">AT&amp;T is another way to write it.</p>
+<p id="this-and-that">This &amp; that.</p>
+<p id="4-5">4 \&lt; 5.</p>
+<p id="6-5">6 &gt; 5.</p>
+<p id="backslash">Backslash: \</p>
+<p id="backtick">Backtick: `</p>
+<p id="asterisk">Asterisk: *</p>
+<p id="underscore">Underscore: _</p>
+<p id="left-brace">Left brace: {</p>
+<p id="right-brace">Right brace: }</p>
+<p id="left-bracket">Left bracket: [</p>
+<p id="right-bracket">Right bracket: ]</p>
+<p id="left-paren">Left paren: (</p>
+<p id="right-paren">Right paren: )</p>
+<p id="greater-than">Greater-than: &gt;</p>
+<p id="hash">Hash: #</p>
+<p id="period">Period: .</p>
+<p id="bang">Bang: !</p>
+<p id="plus">Plus: +</p>
+<p id="minus">Minus: -</p>
+<hr id="hr19">
+<h1 id="links">Links</h1>
+<h2 id="explicit">Explicit</h2>
+<p id="just-a-url">Just a <a href="/url/">URL</a>.</p>
+<p id="url-and-title"><a href="/url/" title="title">URL and title</a>.</p>
+<p id="url-and-title"><a href="/url/" title="title preceded by two spaces">URL and title</a>.</p>
+<p id="url-and-title"><a href="/url/" title="title preceded by a tab">URL and title</a>.</p>
+<p id="url-and-title"><a href="/url/" title="title with &quot;quotes&quot; in it">URL and title</a></p>
+<p id="url-and-title"><a href="/url/" title="title with single quotes">URL and title</a></p>
+<p id="withunderscore"><a href="/url/with_underscore">with_underscore</a></p>
+<p id="email-link"><a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#110;&#x6f;&#98;&#x6f;&#100;&#x79;&#64;&#110;&#x6f;&#x77;&#104;&#x65;&#114;&#x65;&#46;&#110;&#x65;&#116;">&#x45;&#x6d;&#x61;&#x69;&#108;&#32;&#108;&#x69;&#110;&#x6b;</a></p>
+<p id="empty"><a href="">Empty</a>.</p>
+<h2 id="reference">Reference</h2>
+<p id="foo-bar">Foo <a href="/url/">bar</a>.</p>
+<p id="foo-bar">Foo <a href="/url/">bar</a>.</p>
+<p id="foo-bar">Foo <a href="/url/">bar</a>.</p>
+<p id="with-embedded-brackets">With <a href="/url/">embedded [brackets]</a>.</p>
+<p id="b-by-itself"><a href="/url/">b</a> by itself should be a link.</p>
+<p id="indented-once">Indented <a href="/url">once</a>.</p>
+<p id="indented-twice">Indented <a href="/url">twice</a>.</p>
+<p id="indented-thrice">Indented <a href="/url">thrice</a>.</p>
+<p id="this-should-not">This should [not][] be a link.</p>
+<pre id="pre11"><code>[not]: /url</code></pre>
+<p id="foo-bar">Foo <a href="/url/" title="Title with &quot;quotes&quot; inside">bar</a>.</p>
+<p id="foo-biz">Foo <a href="/url/" title="Title with &quot;quote&quot; inside">biz</a>.</p>
+<h2 id="with-ampersands">With ampersands</h2>
+<p id="heres-a-link">Here’s a <a href="http://example.com/?foo=1&amp;bar=2">link with an ampersand in the URL</a>.</p>
+<p id="heres-a-link">Here’s a link with an amersand in the link text: <a href="http://att.com/" title="AT&amp;T">AT&amp;T</a>.</p>
+<p id="heres-an-inline">Here’s an <a href="/script?foo=1&amp;bar=2">inline link</a>.</p>
+<p id="heres-an-inline">Here’s an <a href="/script?foo=1&amp;bar=2">inline link in pointy braces</a>.</p>
+<h2 id="autolinks">Autolinks</h2>
+<p id="with-an-ampersand">With an ampersand: <a href="http://example.com/?foo=1&amp;bar=2">http://example.com/?foo=1&amp;bar=2</a></p>
+<ul id="ul16">
+<li>In a list?</li>
+<li><a href="http://example.com/">http://example.com/</a></li>
+<li>It should.</li>
+</ul>
+<p id="an-e-mail-address">An e-mail address: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#110;&#x6f;&#98;&#x6f;&#100;&#x79;&#64;&#110;&#x6f;&#x77;&#104;&#x65;&#114;&#x65;&#46;&#110;&#x65;&#116;">&#110;&#x6f;&#98;&#x6f;&#100;&#x79;&#64;&#110;&#x6f;&#x77;&#104;&#x65;&#114;&#x65;&#46;&#110;&#x65;&#116;</a></p>
+<blockquote id="blockquote4">
+<p id="blockquoted-httpexamplecom">Blockquoted: <a href="http://example.com/">http://example.com/</a></p>
+</blockquote>
+<p id="auto-links-should-not">Auto-links should not occur here: <code>&lt;http://example.com/&gt;</code></p>
+<pre id="pre12"><code>or here: &lt;http://example.com/&gt;</code></pre>
+<hr id="hr20">
+<h1 id="images">Images</h1>
+<p id="from-voyage-dans">From “Voyage dans la Lune” by Georges Melies (1902):</p>
+<div class="figure" id="div9">
+<img src="lalune.jpg" title="Voyage dans la Lune" alt="lalune"><p class="caption" id="lalune">lalune</p>
+</div>
+<p id="here-is-a">Here is a movie <img src="movie.jpg" alt="movie"> icon.</p>
+<hr id="hr21">
+<h1 id="footnotes">Footnotes</h1>
+<p id="here-is-a">Here is a footnote reference,[^1] and another.[^2] This should <em>not</em> be a footnote reference, because it contains a space.[\^my note] Here is an inline note.[^3]</p>
+<blockquote id="blockquote5">
+<p id="notes-can-go">Notes can go in quotes.[^4]</p>
+</blockquote>
+<ol id="ol10">
+<li>And in list items.[^5]</li>
+</ol>
+<p id="this-paragraph-should">This paragraph should not be part of the note, as it is not indented.</p>
+<p id="1-here-is">[^1]: Here is the footnote. It can go anywhere after the footnote reference. It need not be placed at the end of the document.</p>
+<p id="2-heres-the">[^2]: Here’s the long note. This one contains multiple blocks.</p>
+<pre id="pre13"><code>Subsequent blocks are indented to show that they belong to the footnote
+(as with list items).
+
+      { &lt;code&gt; }
+
+If you want, you can indent every line, but you can also be lazy and just
+indent the first line of each block.</code></pre>
+<p id="3-this-is">[^3]: This is <em>easier</em> to type. Inline notes may contain <a href="http://google.com">links</a> and <code>]</code> verbatim characters, as well as [bracketed text].</p>
+<p id="4-in-quote">[^4]: In quote.</p>
+<p id="5-in-list">[^5]: In list.</p>
+
