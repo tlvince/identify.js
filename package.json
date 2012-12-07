@@ -1,6 +1,6 @@
 {
   "name": "identify",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Tom Vincent <http://tlvince.com/contact>",
   "description": "Generate id attributes for HTML block elements",
   "license": "MIT",
