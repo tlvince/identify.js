@@ -36,7 +36,10 @@ Copyright 2012 Tom Vincent <a href="http://tlvince.com/contact">http://tlvince.c
   <span class="s1">&#39;tfoot&#39;</span><span class="p">,</span>
   <span class="s1">&#39;ul&#39;</span><span class="p">,</span>
   <span class="s1">&#39;video&#39;</span>
-<span class="p">]</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Sanitise a given string</p>
+<span class="p">]</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Default options</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">defaults</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">block_elements</span><span class="o">:</span> <span class="nx">block_elements</span><span class="p">,</span>
+  <span class="nx">anchor</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>Sanitise a given string</p>
 
 <p>Performs the following transformations (in order):</p>
 
@@ -63,20 +66,25 @@ Copyright 2012 Tom Vincent <a href="http://tlvince.com/contact">http://tlvince.c
   <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[^a-z0-9-]/g</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
   <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-{2,}/g</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">);</span>
   <span class="k">return</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^-|-$)/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="p">};</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>Add id attributes to block elements in the given HTML.</p>
+<span class="p">};</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>Add id attributes to block elements in the given HTML.</p>
 
 <p>Does not clobber existing attributes.</p>
 
-<p>Returns the processed HTML.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">html</span><span class="p">)</span> <span class="p">{</span>
+<p>Returns the processed HTML.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">cheerio</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">lowerCaseTags</span><span class="o">:</span> <span class="kc">true</span>
   <span class="p">});</span>
 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">options</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">options</span> <span class="o">=</span> <span class="nx">defaults</span><span class="p">;</span>
+  <span class="p">}</span>
+
   <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">len</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">block_elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nx">block_elements</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">block_elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">block_elements</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">tag</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">switch</span> <span class="p">(</span><span class="nx">tag</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">case</span> <span class="s1">&#39;h1&#39;</span><span class="o">:</span>
           <span class="k">case</span> <span class="s1">&#39;h2&#39;</span><span class="o">:</span>
@@ -84,12 +92,18 @@ Copyright 2012 Tom Vincent <a href="http://tlvince.com/contact">http://tlvince.c
           <span class="k">case</span> <span class="s1">&#39;h4&#39;</span><span class="o">:</span>
           <span class="k">case</span> <span class="s1">&#39;h5&#39;</span><span class="o">:</span>
           <span class="k">case</span> <span class="s1">&#39;h6&#39;</span><span class="o">:</span>
-            <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nx">sanitise</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">()));</span>
+            <span class="nx">id</span> <span class="o">=</span> <span class="nx">sanitise</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span>
+            <span class="k">break</span><span class="p">;</span>
           <span class="k">case</span> <span class="s1">&#39;p&#39;</span><span class="o">:</span>
-            <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nx">sanitise</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(),</span> <span class="mi">3</span><span class="p">));</span>
+            <span class="nx">id</span> <span class="o">=</span> <span class="nx">sanitise</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(),</span> <span class="mi">3</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
           <span class="k">default</span><span class="o">:</span>
-            <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nx">tag</span> <span class="o">+</span> <span class="nx">index</span><span class="p">);</span>
+            <span class="nx">id</span> <span class="o">=</span> <span class="nx">tag</span> <span class="o">+</span> <span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
         <span class="p">}</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">anchor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;#&#39;</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;&quot; class=&quot;anchor&quot;&gt;&lt;/a&gt;&#39;</span><span class="p">)</span>
       <span class="p">}</span>
     <span class="p">});</span>
   <span class="p">}</span>
