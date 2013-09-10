@@ -26,13 +26,15 @@
   },
   "devDependencies": {
     "should": "~1.2.2",
-    "mocha": "~1.12.1"
+    "mocha": "~1.12.1",
+    "docco": "~0.6.2"
   },
   "bugs": {
     "url": "https://github.com/tlvince/identify.js/issues"
   },
   "scripts": {
     "test": "mocha",
-    "test-watch": "mocha --watch"
+    "test-watch": "mocha --watch",
+    "docs": "docco lib/*"
   }
 }
