@@ -1,6 +1,6 @@
 {
   "name": "identify",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Tom Vincent <http://tlvince.com/contact>",
   "description": "Generate id attributes for HTML block elements",
   "license": "MIT",
@@ -11,7 +11,8 @@
     "deep-link"
   ],
   "directories": {
-    "lib": "./lib/"
+    "doc": "docs",
+    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,16 @@
   },
   "engine": {
     "node": ">=0.6"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.12.1"
+  },
+  "bugs": {
+    "url": "https://github.com/tlvince/identify.js/issues"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test-watch": "mocha --watch"
   }
 }
